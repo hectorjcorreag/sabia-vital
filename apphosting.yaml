@@ -41,3 +41,9 @@ env:
     availability:
       - BUILD
       - RUNTIME
+
+      - variable: NEXT_PUBLIC_FIREBASE_DATABASE_ID
+    value: "vital"
+    availability:
+      - BUILD
+      - RUNTIME
