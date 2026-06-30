@@ -47,7 +47,7 @@ export default function LoginPage() {
     const userData = userSnap.data();
 
     return {
-      role: userData.role || null,
+      role: userData.role || userData.profile?.type || null,
       activo: userData.activo ?? true,
       estado: userData.estado || null,
       data: userData,
@@ -112,8 +112,8 @@ export default function LoginPage() {
     } catch (error: unknown) {
       const code =
         typeof error === "object" &&
-        error !== null &&
-        "code" in error
+          error !== null &&
+          "code" in error
           ? String((error as { code?: string }).code)
           : "";
 

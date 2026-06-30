@@ -28,7 +28,7 @@ export function normalizeRole(role?: string | null): AppRole | null {
     return "distribuidor";
   }
 
-  if (cleanRole === "mercaderista") {
+  if (cleanRole === "mercaderista" || cleanRole === "merchandiser") {
     return "mercaderista";
   }
 
