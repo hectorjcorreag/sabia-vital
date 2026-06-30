@@ -68,6 +68,26 @@ export async function loadMerchandiserProfile(user: User) {
   return profile;
 }
 
+function extractSellerPhotoUrl(raw: any) {
+  return (
+    raw.photo?.url ||
+    raw.photoUrl ||
+    raw.photoURL ||
+    raw.imageUrl ||
+    raw.imageURL ||
+    raw.avatarUrl ||
+    raw.avatarURL ||
+    raw.profilePhotoUrl ||
+    raw.profilePhotoURL ||
+    raw.personal?.photo?.url ||
+    raw.personal?.photoUrl ||
+    raw.personal?.photoURL ||
+    raw.documents?.photo?.url ||
+    raw.files?.photo?.url ||
+    ""
+  );
+}
+
 export async function loadAllActiveSellers() {
   const q = query(collection(db, "sellers"), orderBy("firstName", "asc"));
   const snap = await getDocs(q);
@@ -87,10 +107,7 @@ export async function loadAllActiveSellers() {
           "",
         uid: raw.uid || raw.userUid || raw.authUid || "",
         active: raw.active !== false,
-
-        // Aquí está el ajuste importante
         photoUrl: extractSellerPhotoUrl(raw),
-
         documentNumber:
           raw.documentNumber ||
           raw.document ||
@@ -105,7 +122,6 @@ export async function loadAllActiveSellers() {
 
   return sellers;
 }
-
 export async function loadAssignedSellerIds(profile: MerchandiserProfile) {
   const merchandiserId = profile.merchandiserId || profile.uid;
 
@@ -253,23 +269,4 @@ export async function createReferralCustomer(args: {
   });
 
   return docRef.id;
-}
-function extractSellerPhotoUrl(raw: any) {
-  return (
-    raw.photo?.url ||
-    raw.photoUrl ||
-    raw.photoURL ||
-    raw.imageUrl ||
-    raw.imageURL ||
-    raw.avatarUrl ||
-    raw.avatarURL ||
-    raw.profilePhotoUrl ||
-    raw.profilePhotoURL ||
-    raw.personal?.photo?.url ||
-    raw.personal?.photoUrl ||
-    raw.personal?.photoURL ||
-    raw.documents?.photo?.url ||
-    raw.files?.photo?.url ||
-    ""
-  );
 }
