@@ -40,6 +40,7 @@ export const mercaderistaMenu: MenuItem[] = [
   
   { label: "Mi panel", href: "/mercaderista" },
   { label: "Nuevo referido", href: "/mercaderista/referidos/nuevo" },
+  { label: "Siguiente llamada", href: "/mercaderista/referidos/llamadas" },
   { label: "Rutas", href: "/mercaderista/rutas" },
   { label: "Visitas", href: "/mercaderista/visitas" },
   { label: "Evidencias", href: "/mercaderista/evidencias" },
