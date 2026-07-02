@@ -11,6 +11,7 @@ export const adminMenu: MenuItem[] = [
   { label: "Vendedores", href: "/admin/vendedores" },
   { label: "Distribuidores", href: "/admin/distribuidores" },
   { label: "Mercaderistas", href: "/admin/mercaderistas" },
+  { label: "Telemercadeo", href: "/admin/telemercadeo" },
   { label: "Clientes", href: "/admin/clientes" },
   { label: "Visitas", href: "/admin/visitas" },
   { label: "Ventas", href: "/admin/ventas" },
@@ -21,6 +22,7 @@ export const adminMenu: MenuItem[] = [
 export const vendedorMenu: MenuItem[] = [
   { label: "Mi panel", href: "/vendedor" },
   { label: "Clientes", href: "/vendedor/clientes" },
+  { label: "Mi agenda", href: "/vendedor/agenda" },
   { label: "Visitas", href: "/vendedor/visitas" },
   { label: "Ventas", href: "/vendedor/ventas" },
   { label: "Ranking", href: "/vendedor/ranking" },

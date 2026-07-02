@@ -682,7 +682,7 @@ export default function SellerVisitsPage() {
         <div>
           {/* Ajusta esta ruta según tu proyecto */}
           <Link
-            href="/dashboard/admin/vendedores"
+            href="/admin/vendedores"
             className="inline-flex items-center gap-2 rounded-xl border border-black/10 px-3 py-2 text-sm font-extrabold hover:bg-black/5"
           >
             ← Volver a vendedores

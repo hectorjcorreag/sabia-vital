@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function VendedorPage() {
-  redirect("/dashboard/vendedor/perfil");
+  redirect("/vendedor/perfil");
 }
